@@ -11,17 +11,13 @@ export const formSchema = z.object ({
     skills: z.string().array().min(1,'Select at least one skill').max(2,'A man with more than 2 skill is overqualified'),
     DateTime : z.string().optional()
 });
-
- import dayjs from 'dayjs';
- const today = dayjs()
  
 export type formSchemaType = z.infer<typeof formSchema>
 
 export const defaultValues : formSchemaType ={
-    name:'navas',
-    email:'n@gmail.com',
-    hobbies:['Reading'],
+    name:'',
+    email:'',
+    hobbies:[],
     gender:'male',
-    skills: ['Creative'],
-   
+    skills:[]
 }
